@@ -91,7 +91,38 @@ button {
   display: flex;
   background: #020b16;
   transition: left 0.5s ease;
-  z-index: 999;
+  z-index: 3000;
+}
+
+.side-menu .close-icon {
+  display: none; /* oculta por defecto */
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  font-size: 30px;
+  color: #00e5ff;
+  cursor: pointer;
+  z-index: 3001;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* cuando el menú se activa, muestra la X */
+.side-menu.active .close-icon {
+  display: block !important;
+}
+
+.side-menu.closing .close-icon {
+  display: none !important;
+}
+
+.side-menu .close-icon:hover {
+  transform: scale(1.1);
+  color: #00ff88;
+}
+
+/* evita que la barra tape la X */
+body.menu-open .navbar {
+  pointer-events: none;
 }
 
 /* === COLUMNAS DE REDES === */
@@ -279,6 +310,217 @@ button {
   filter: drop-shadow(0 0 15px #00e5ff);
 }
 
+/* ==== TOOLING SECTION ==== */
+.tooling {
+  width: 100%;
+  padding: 100px 0;
+  text-align: center;
+  background: #0b1220;
+}
+
+.tooling-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ff8833;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+}
+
+.tooling-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 800px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.tool-card {
+  background: rgba(0, 255, 136, 0.05);
+  border: 2px solid #00e5ff44;
+  border-radius: 14px;
+  padding: 40px 20px;
+  color: #e4f0fb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00e5ff33 inset;
+}
+
+.tool-card i {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.tool-card span {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Efectos al pasar el mouse */
+.tool-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: #00e5ff;
+  box-shadow: 0 0 25px #00e5ff66;
+}
+
+/* Colores personalizados */
+.tool-card.html i {
+  color: #ff4c1e;
+}
+.tool-card.css i {
+  color: #00aaff;
+}
+.tool-card.js i {
+  color: #f7df1e;
+}
+
+/* ==== OVERLAY DEL POPUP ==== */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 4000;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+/* ==== CONTENEDOR PRINCIPAL ==== */
+.popup-wrapper {
+  background: #0b1220;
+  border: 2px solid #00e5ff;
+  border-radius: 18px;
+  padding: 40px;
+  width: 95%;
+  max-width: 1200px;
+  box-shadow: 0 0 40px #00e5ff55;
+  position: relative;
+  animation: popupFade 0.35s ease;
+  text-align: center;
+}
+
+.popup-title {
+  color: #00e5ff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  text-shadow: 0 0 10px #00e5ff55;
+}
+
+/* ==== TARJETAS INTERNAS ==== */
+.popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.popup-card {
+  background: #0f192d;
+  border: 2px solid #00e5ff;
+  border-radius: 14px;
+  padding: 20px;
+  width: 30%;
+  min-width: 280px;
+  text-align: center;
+  box-shadow: 0 0 20px #00e5ff33;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popup-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px #00e5ff99;
+}
+
+.popup-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.popup-card h3 {
+  color: #00e5ff;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.popup-card p {
+  color: #bfcfe3;
+  font-size: 15px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.popup-btn {
+  display: inline-block;
+  background: #00e5ff;
+  color: #0b1220;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.popup-btn:hover {
+  background: #00ff88;
+  transform: scale(1.05);
+}
+
+/* ==== CERRAR POPUP ==== */
+.close-popup {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  color: #00e5ff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-popup:hover {
+  color: #00ff88;
+}
+
+@keyframes popupFade {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 1024px) {
+  .popup-card {
+    width: 45%;
+  }
+}
+@media (max-width: 700px) {
+  .popup-card {
+    width: 100%;
+  }
+}
+
 /* =========================
    📱 TABLET ≤1024px
    — Apila el hero y ajusta tamaños —
@@ -327,7 +569,7 @@ button {
     inset: 0;
     display: flex;
     flex-direction: column-reverse;
-    background: red; /*0b1220*/
+    background: #0b1220;
     transform: translateY(-100%);
     transition: transform 0.35s ease;
     z-index: 999;
