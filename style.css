@@ -315,7 +315,54 @@ button {
    — Menú tipo overlay, nav centrado, redes apiladas —
 ========================= */
 @media (max-width: 768px) {
-  /* Menú lateral como overlay de pantalla completa */
+  body.menu-open .navbar {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  /* El menú ocupa toda la pantalla */
+  body.menu-open .side-menu {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    transform: translateY(0);
+    padding-top: 0 !important;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  /* X visible dentro del overlay */
+  .side-menu .close-icon {
+    display: block !important;
+    position: fixed;
+    top: 16px;
+    right: 18px;
+    font-size: 30px;
+    color: #00e5ff;
+    z-index: 2001;          /* por encima del overlay */
+    cursor: pointer;
+    pointer-events: auto;   /* por si acaso */
+    transition: transform .2s ease, color .2s ease;
+  }
+  .side-menu .close-icon:hover {
+    transform: scale(1.1);
+    color: #00ff88;
+  }
+
+  /* El ícono de barras desaparece cuando se abre el menú */
+  body.menu-open .open-icon {
+    display: none !important;
+  }
+
+  /* Evita el scroll del fondo */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .navbar .close-icon { display: none !important; }
+
   .side-menu {
     position: fixed;
     inset: 0; /* top/right/bottom/left:0 */
@@ -365,6 +412,7 @@ button {
     height: auto;
     display: flex;
     flex-direction: column;
+    line-height: 50px;
   }
   .socials a {
     display: flex;
