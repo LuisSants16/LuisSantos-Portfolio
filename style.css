@@ -314,7 +314,11 @@ button {
    📲 MÓVIL ≤768px
    — Menú tipo overlay, nav centrado, redes apiladas —
 ========================= */
+/* =========================
+   📲 MÓVIL ≤768px (versión completa y corregida con CSS Grid)
+========================= */
 @media (max-width: 768px) {
+  /* ===== Ocultar header (navbar) al abrir menú ===== */
   body.menu-open .navbar {
     transform: translateY(-100%);
     opacity: 0;
@@ -322,18 +326,26 @@ button {
     transition: transform 0.35s ease, opacity 0.35s ease;
   }
 
-  /* El menú ocupa toda la pantalla */
-  body.menu-open .side-menu {
+  /* ===== Configuración del menú lateral ===== */
+  .side-menu {
     position: fixed;
     inset: 0;
+    width: 100%;
     height: 100vh;
-    transform: translateY(0);
-    padding-top: 0 !important;
-    overflow-y: auto;
+    background: #0b1015;
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* mitad para nav-links, mitad para socials */
+    transform: translateY(-100%);
+    transition: transform 0.35s ease;
     z-index: 999;
+    overflow: hidden;
   }
 
-  /* X visible dentro del overlay */
+  .side-menu.active {
+    transform: translateY(0);
+  }
+
+  /* ===== Ícono "X" dentro del overlay ===== */
   .side-menu .close-icon {
     display: block !important;
     position: fixed;
@@ -341,108 +353,104 @@ button {
     right: 18px;
     font-size: 30px;
     color: #00e5ff;
-    z-index: 2001;          /* por encima del overlay */
+    z-index: 2001;
     cursor: pointer;
-    pointer-events: auto;   /* por si acaso */
-    transition: transform .2s ease, color .2s ease;
+    pointer-events: auto;
+    transition: transform 0.2s ease, color 0.2s ease;
   }
+
   .side-menu .close-icon:hover {
     transform: scale(1.1);
     color: #00ff88;
   }
 
-  /* El ícono de barras desaparece cuando se abre el menú */
+  /* ===== Ícono de barras desaparece al abrir menú ===== */
   body.menu-open .open-icon {
     display: none !important;
   }
 
-  /* Evita el scroll del fondo */
+  /* ===== Evitar scroll del fondo ===== */
   body.menu-open {
     overflow: hidden;
   }
 
-  .navbar .close-icon { display: none !important; }
-
-  .side-menu {
-    position: fixed;
-    inset: 0; /* top/right/bottom/left:0 */
-    width: 100%;
-    height: 100vh;
-    background: #0b1015;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    align-items: stretch;
-    transform: translateY(-100%);
-    transition: transform 0.35s ease;
-    z-index: 999;
-    padding-top: 72px; /* deja aire para el icono del header */
+  /* ===== Ocultar X del header ===== */
+  .navbar .close-icon {
+    display: none !important;
   }
-  .side-menu.active {
-    transform: translateY(0);
-  } /* Navegación (HOME, WORK, ...) centrada y grande */
+
+  /* ===== Navegación (HOME, WORK, etc.) centrada ===== */
   .nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 24px; /* separa un poco más */
+    list-style: none;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
   }
+
   .nav-links li {
     margin: 0;
   }
-  .side-menu .nav-links a {
+
+  .nav-links a {
     text-decoration: none;
     color: #00e5ff;
-    font-size: 30px !important; /* 🔥 más grande y legible */
+    font-size: 28px !important;
     font-weight: 900;
     letter-spacing: 1px;
-    line-height: 1; /* evita que se separe demasiado */
+    line-height: 1;
     transition: color 0.3s ease, transform 0.2s ease;
   }
+
   .nav-links a:hover {
     color: #00ff88;
-    transform: scale(1.05); /* ligero efecto al pasar el mouse */
-  } /* Redes sociales: fila vertical al final, icono + texto horizontales */
-  .socials {
-    margin-top: auto; /* empuja a la parte de abajo */
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    line-height: 50px;
+    transform: scale(1.05);
   }
+
+  /* ===== Redes sociales (mitad inferior) ===== */
+  .socials {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    width: 100%;
+    height: 100%;
+  }
+
   .socials a {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     color: #fff;
-    text-decoration: none; /* 🔁 reset de lo que usas en desktop */
-    writing-mode: horizontal-tb;
-    text-orientation: mixed;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
   }
+
   .socials i {
     font-size: 22px;
   }
-  .socials span {
-    transform: none; /* quita el rotate(180deg) del desktop */
-    writing-mode: horizontal-tb;
-    font-size: 16px;
-    font-weight: 700;
-  } /* Colores oficiales */
+
+  /* ===== Colores oficiales ===== */
   .github {
     background: #161b22;
   }
+
   .linkedin {
     background: #0a66c2;
   }
+
   .instagram {
     background: #d62976;
   }
+
   .facebook {
     background: #1877f2;
-  } /* Hero más compacto en móvil */
+  }
+
+  /* ===== Sección hero compacta ===== */
   .hero {
     flex-direction: column-reverse;
     text-align: center;
@@ -451,29 +459,36 @@ button {
     min-height: 100vh;
     margin-top: 20px;
   }
+
   .hero-content {
     max-width: 96%;
   }
+
   .intro-badge {
     font-size: 14px;
     padding: 7px 14px;
   }
+
   .hero h1 {
     font-size: 26px;
     line-height: 1.35;
   }
+
   .hero .highlight {
     font-size: 28px;
   }
+
   .hero p {
     font-size: 15px;
     line-height: 1.55;
     max-width: 100%;
   }
+
   .hero-image img {
     width: 240px;
   }
 }
+
 
 /* =========================
    📱 Pequeños ≤480px (finos)
