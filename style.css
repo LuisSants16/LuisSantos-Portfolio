@@ -404,8 +404,8 @@ button {
     flex: 1; /* ocupa el otro 50% */
     display: flex;
     flex-direction: column;
-
     width: 100%;
+    padding-bottom: 30px;
   }
 
   .side-menu .socials a {
@@ -419,8 +419,6 @@ button {
     font-weight: 700;
     font-size: 16px;
     text-decoration: none;
-    writing-mode: horizontal-tb !important;
-    transform: none !important;
   }
 
   /* 🔧 Corrige el texto dentro (span) */
