@@ -326,7 +326,7 @@ button {
     position: fixed;
     inset: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     background: #0b1015;
     transform: translateY(-100%);
     transition: transform 0.35s ease;
@@ -403,23 +403,33 @@ button {
   .socials {
     flex: 1; /* ocupa el otro 50% */
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+
     width: 100%;
   }
 
-  .socials a {
-    flex: 1;
-    height: 100%;
+  .side-menu .socials a {
     display: flex;
-    justify-content: center;
+    flex-direction: row; /* Ícono y texto en línea */
+    justify-content: center; /* Centra el contenido dentro */
     align-items: center;
-    gap: 8px;
+    gap: 8px; /* Espacio entre ícono y texto */
+    width: 100%;
     color: #fff;
     font-weight: 700;
-    text-decoration: none;
     font-size: 16px;
+    text-decoration: none;
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+  }
+
+  /* 🔧 Corrige el texto dentro (span) */
+  .side-menu .socials span {
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
   }
 
   .socials i {
@@ -481,7 +491,6 @@ button {
     width: 240px;
   }
 }
-
 
 /* =========================
    📱 Pequeños ≤480px (finos)
