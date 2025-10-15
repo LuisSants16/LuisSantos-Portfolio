@@ -309,16 +309,11 @@ button {
     width: 300px;
   }
 }
-
 /* =========================
-   📲 MÓVIL ≤768px
-   — Menú tipo overlay, nav centrado, redes apiladas —
-========================= */
-/* =========================
-   📲 MÓVIL ≤768px (versión completa y corregida con CSS Grid)
+   📲 MÓVIL ≤768px — Versión final con FLEX (50% / 50%)
 ========================= */
 @media (max-width: 768px) {
-  /* ===== Ocultar header (navbar) al abrir menú ===== */
+  /* ===== Ocultar header al abrir menú ===== */
   body.menu-open .navbar {
     transform: translateY(-100%);
     opacity: 0;
@@ -326,18 +321,17 @@ button {
     transition: transform 0.35s ease, opacity 0.35s ease;
   }
 
-  /* ===== Configuración del menú lateral ===== */
+  /* ===== Menú lateral ocupa toda la pantalla ===== */
   .side-menu {
     position: fixed;
     inset: 0;
-    width: 100%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: #0b1015;
-    display: grid;
-    grid-template-rows: 1fr 1fr; /* mitad para nav-links, mitad para socials */
     transform: translateY(-100%);
     transition: transform 0.35s ease;
     z-index: 999;
+    height: 100vh;
     overflow: hidden;
   }
 
@@ -345,7 +339,7 @@ button {
     transform: translateY(0);
   }
 
-  /* ===== Ícono "X" dentro del overlay ===== */
+  /* ===== Ícono "X" ===== */
   .side-menu .close-icon {
     display: block !important;
     position: fixed;
@@ -355,7 +349,6 @@ button {
     color: #00e5ff;
     z-index: 2001;
     cursor: pointer;
-    pointer-events: auto;
     transition: transform 0.2s ease, color 0.2s ease;
   }
 
@@ -364,12 +357,12 @@ button {
     color: #00ff88;
   }
 
-  /* ===== Ícono de barras desaparece al abrir menú ===== */
+  /* ===== Ícono hamburguesa desaparece ===== */
   body.menu-open .open-icon {
     display: none !important;
   }
 
-  /* ===== Evitar scroll del fondo ===== */
+  /* ===== Bloqueo del fondo ===== */
   body.menu-open {
     overflow: hidden;
   }
@@ -379,8 +372,9 @@ button {
     display: none !important;
   }
 
-  /* ===== Navegación (HOME, WORK, etc.) centrada ===== */
+  /* ===== NAV LINKS (mitad superior) ===== */
   .nav-links {
+    flex: 1; /* ocupa el 50% */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -391,17 +385,12 @@ button {
     padding: 0;
   }
 
-  .nav-links li {
-    margin: 0;
-  }
-
   .nav-links a {
     text-decoration: none;
     color: #00e5ff;
-    font-size: 28px !important;
+    font-size: 28px;
     font-weight: 900;
     letter-spacing: 1px;
-    line-height: 1;
     transition: color 0.3s ease, transform 0.2s ease;
   }
 
@@ -410,27 +399,31 @@ button {
     transform: scale(1.05);
   }
 
-  /* ===== Redes sociales (mitad inferior) ===== */
+  /* ===== SOCIALS (mitad inferior) ===== */
   .socials {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    flex: 1; /* ocupa el otro 50% */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
     width: 100%;
-    height: 100%;
   }
 
   .socials a {
+    flex: 1;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     color: #fff;
+    font-weight: 700;
     text-decoration: none;
     font-size: 16px;
-    font-weight: 700;
   }
 
   .socials i {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   /* ===== Colores oficiales ===== */
@@ -450,7 +443,7 @@ button {
     background: #1877f2;
   }
 
-  /* ===== Sección hero compacta ===== */
+  /* ===== HERO compacta ===== */
   .hero {
     flex-direction: column-reverse;
     text-align: center;
