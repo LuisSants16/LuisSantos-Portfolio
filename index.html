@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LuisSantos | Portafolio</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">LS</div>
+      <div class="menu-icon" id="menuIcon">
+        <i class="fa-solid fa-bars-staggered open-icon"></i>
+        <i class="fa-solid fa-x close-icon"></i>
+      </div>
+    </header>
+
+    <nav class="side-menu" id="sideMenu">
+      <div class="socials">
+        <a href="#" class="github"
+          ><i class="fa-brands fa-github"></i><span>Github</span></a
+        >
+        <a href="#" class="linkedin"
+          ><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a
+        >
+        <a href="#" class="instagram"
+          ><i class="fa-brands fa-instagram"></i><span>Instagram</span></a
+        >
+        <a href="#" class="facebook"
+          ><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></a
+        >
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">WORK</a></li>
+        <li><a href="#">WRITING</a></li>
+        <li><a href="#">RESUME</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="intro-badge">
+          <span>👋 Hola, soy Luis Santos</span>
+        </div>
+        <h1>
+          <span class="highlight">Desarrollador Front-End</span><br />
+          Apasionado por crear sitios web<br />
+          <span class="accent">modernos, funcionales</span> y atractivos
+        </h1>
+        <p>
+          Me especializo en diseñar interfaces limpias y responsivas. Mi
+          objetivo es seguir creciendo profesionalmente hasta convertirme en un
+          <b>programador full stack</b>.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <img src="img/luis.png" alt="Luis Santos Programador" />
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+      VANTA.NET({
+        el: "#hero",
+        color: 0xffffff,
+        backgroundColor: 0x0b1220,
+        points: 20.0,
+        maxDistance: 8.0,
+        spacing: 25.0,
+      });
+    </script>
+  </body>
+</html>
