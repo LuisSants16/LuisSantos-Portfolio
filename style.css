@@ -353,7 +353,7 @@ button {
   .side-menu .nav-links a  {
     text-decoration: none;
     color: #00e5ff;
-    font-size: 20px !important; /* 🔥 más grande y legible */
+    font-size: 30px !important; /* 🔥 más grande y legible */
     font-weight: 900;
     letter-spacing: 1px;
     line-height: 1; /* evita que se separe demasiado */
@@ -375,8 +375,7 @@ button {
   }
   .socials a {
     display: flex;
-    align-items: center;
-
+    flex-direction: row;
     color: #fff;
     text-decoration: none;
 
