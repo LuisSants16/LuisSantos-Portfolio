@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(55, 126, 55);
+    
+    
+}
+
+header{
+    background: rgb(71, 46, 46);
+    width: 1000px;
+    margin: auto;
+    height: 110px;
+    position: relative;
+}
+
+h2{
+    color: white;
+    padding-left: 150px;
+    text-transform: uppercase;
+    position: absolute;
+    padding-top: 15px;
+    font-family: calibri;
+    font-size: 30px;   
+}
+
+.logo{
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.botones{
+    position: absolute;
+    top: 20px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    border-radius:30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+#a{
+    right: 250px;
+    background: green;
+}
+
+#b{
+    right: 150px;
+    background: blue;
+}
+
+#c{
+    right: 50px;
+    background: red;
+}
+
+nav{
+    width: 1000px;
+    background: blue;
+    margin: auto;
+}
+
+nav ul{
+    text-align: center;
+}
+
+nav li{
+    list-style: none;
+    display: inline-block;
+    
+}
+
+nav a{
+    text-align: center;
+    color: white;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: yellow;
+    background: black;
+}
+
+section{
+    width: 1000px;
+    margin: auto;
+    background: skyblue;
+    
+}
+
+h3{
+    text-align: center;
+    color: blue;
+    padding: 10px;
+    font-size: 25px;
+}
+
+article{
+    padding: 10PX;
+}
+
+P{   
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify; 
+    color: #524646;
+}
+
+.cajaarticle{
+    margin-top: 5px;
+    background: rgb(190, 138, 79);
+    color: white;
+    padding: 10px;
+}
+
+#avisoparrafo{
+    color: white;
+}
+
+h1{
+    font-size: 22px;
+    margin-top: 10px;
+    color: black;
+}
+
+.nino{
+    width: 130px;
+    float: right;
+    margin: 10px;
+    height: 300px;
+    
+}
+
+footer{
+    background: rgb(87, 60, 31);
+    width: 1000px;
+    margin: auto;
+    clear: both;
+}
+
+h4{
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
+
+span ul{
+    list-style: none;
+    text-align: center;
+    margin-top: 25px;
+    padding-bottom: 10px;
+}
+
+span li{
+    display: inline-block;
+    
+}
+
+span a{
+    text-decoration: none;
+    color: yellow;
+    padding: 1px;
+    
+}
+
+/*Mision & Vision*/
+
+
+
+
+.article1{
+    width: 550px;
+    float: left;
+    background: skyblue; 
+    padding: 10px;
+    height: 800px;
+}
+
+aside{
+    width: 450px;
+    float: right;
+    background: skyblue;
+    padding: 30px;
+    height: 800px;
+}
+
+.article1 img{
+    width: 500px
+}
+
+aside img{
+    border-radius: 150px;
+    width: 250px;
+    height: 250px;
+}
+
+section p{
+    padding: 10px;
+    line-height: 25px;
+}
+
+aside h1{
+    color: #524646;
+}
+
+aside ul{
+    color: #524646;
+}
+
+aside ul{
+    font-size: 20px;
+}
+
+
+/*Servicios*/
+
+
+section h3{
+    margin: 0;
+    padding: 0;
+}
+
+.servicio01{
+    width: 333.34px;   
+    float: left;
+    background: skyblue;
+    font-size: 13px;
+    
+}
+
+.servicio03{
+    float: right;
+    width: 333.33px;  
+    background: skyblue;
+    font-size: 13px;
+}
+
+.servicio02{
+    float: right;
+    width: 333.34px;  
+    background: skyblue;
+    font-size: 13px;
+}
+
+#pparraforservicio{
+    font-size: 13px;
+}
+
+#pservicio{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+
+/*contactos*/
+
+table{
+    text-align: center;
+    border:rgb(13, 13, 204) 2px solid;
+    width: 600px;
+    height: 150px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #524646;
+}

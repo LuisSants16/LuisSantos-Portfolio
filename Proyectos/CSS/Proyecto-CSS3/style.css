@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(59, 180, 144);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+/* header */
+
+header{
+    background: darkblue;
+    
+    width: 100%;
+}
+
+.container{
+    width: 960px;
+    margin: auto;
+}
+
+.logo{
+    float: left;
+}
+
+.logo img{
+    margin: 10px;
+}
+
+.redes img{
+    margin: 10px;
+    width: 30px;
+    border-radius: 30px;
+    border-right: solid white;
+}
+
+.redes{
+    float: right;
+}
+
+/* lista header */
+
+.lista{
+    background: blue;
+    width: 100%;
+    overflow: hidden;
+}
+
+.lista ul{
+    text-align: center;
+}
+
+.lista li{
+    display: inline-block;
+}
+
+.lista a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.lista a:hover{
+    color: black;
+    cursor: pointer;
+}
+
+/* banner */
+
+.banner img{
+    margin: auto;
+    display: block;
+    width: 960px;
+}
+
+/* article */
+
+article{
+    width: 960px;
+    background-color: white;
+    margin: auto;
+    overflow: hidden;
+}
+
+h2{
+    color: rgb(110, 100, 86);
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+article p{
+    text-align: justify;
+    width: 250px;
+    margin: auto;
+    font-size: 12px;
+    color: rgb(57, 57, 155);
+}
+
+article img{
+    padding: 10px;
+}
+
+button{
+    background: rgb(43, 114, 207);
+    margin: 20px;
+    padding: 10px 30px;
+    color: white;
+    border: 0px;
+}
+
+button:hover{
+    background:rgb(23, 153, 23);
+    cursor: pointer;
+}
+
+.hoteles{
+    width: 320px;
+    float: left;
+    text-align: center;
+    display: block;
+}
+
+.jacuzzi{
+    width: 320px;
+    float: left;
+    text-align: center;
+    display: block;
+}
+
+.camas{
+    width: 320px;
+    float: right;
+    text-align: center;
+    display: block;
+}
+
+.Piscinas{
+    width: 320px;
+    float: left;
+    text-align: center;
+    display: block;
+}
+
+.Gimnasio{
+    width: 320px;
+    float: left;
+    text-align: center;
+    display: block;
+}
+
+.Estacionamiento{
+    width: 320px;
+    float: right;
+    text-align: center;
+    display: block;
+}
+
+/* footer */
+
+footer{
+    background: rgb(46, 20, 117);
+}
+
+footer h2{
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+footer ul{
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+}
+
+footer li{
+    font-weight: bold;
+}

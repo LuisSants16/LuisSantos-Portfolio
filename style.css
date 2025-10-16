@@ -347,6 +347,7 @@ body.menu-open .navbar {
   align-items: center;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px #00e5ff33 inset;
+  cursor: pointer;
 }
 
 .tool-card i {
