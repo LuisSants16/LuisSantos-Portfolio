@@ -587,11 +587,13 @@ body.menu-open .navbar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: opacity 0.3s ease;
 }
 
 .showroom-card.fade {
   opacity: 0;
   transform: scale(0.98);
+  transition: opacity 0.3s ease;
 }
 
 .showroom-card img {
@@ -974,7 +976,7 @@ body.menu-open .navbar {
     margin-top: 12px;
   }
 
-    .showroom {
+  .showroom {
     padding: 60px 0 80px;
   }
 
@@ -995,6 +997,11 @@ body.menu-open .navbar {
 
   .arrow {
     font-size: 45px;
+  }
+
+  #prevProject,
+  #nextProject {
+    display: none !important;
   }
 }
 
@@ -1038,7 +1045,7 @@ body.menu-open .navbar {
     padding: 10px 0;
   }
 
-    .showroom {
+  .showroom {
     padding: 50px 0 70px;
   }
 

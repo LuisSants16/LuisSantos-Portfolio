@@ -98,6 +98,9 @@ const projects = [
 ];
 
 let currentIndex = 0;
+let autoSlideInterval;
+let startX = 0;
+let endX = 0;
 
 const projectImage = document.getElementById("projectImage");
 const projectTitle = document.getElementById("projectTitle");
@@ -105,50 +108,13 @@ const projectDesc = document.getElementById("projectDesc");
 const showroomBg = document.getElementById("showroomBg");
 const visitLink = document.getElementById("visitLink");
 const githubLink = document.getElementById("githubLink");
+const card = document.querySelector(".showroom-card");
+const showroom = document.querySelector(".showroom");
 
 // === FUNCIÓN PRINCIPAL ===
 function updateShowroom() {
   const p = projects[currentIndex];
-  projectImage.src = p.img;
-  projectTitle.textContent = p.title;
-  projectDesc.textContent = p.desc;
-  showroomBg.style.backgroundImage = `url(${p.img})`;
-
-  // 🔗 Actualizar enlaces
-  visitLink.href = p.visit;
-  githubLink.href = p.github;
-}
-
-// === EVENTOS ===
-
-// Click en la imagen → abre el proyecto
-projectImage.addEventListener("click", () => {
-  window.open(projects[currentIndex].visit, "_blank");
-});
-
-// Flecha izquierda
-document.getElementById("prevProject").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-  updateShowroom();
-});
-
-// Flecha derecha
-document.getElementById("nextProject").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % projects.length;
-  updateShowroom();
-});
-
-// Inicializar showroom al cargar
-updateShowroom();
-
-
-function updateShowroom() {
-  const p = projects[currentIndex];
-  const card = document.querySelector(".showroom-card");
-
-  // 🔹 efecto de desvanecimiento
   card.classList.add("fade");
-
   setTimeout(() => {
     projectImage.src = p.img;
     projectTitle.textContent = p.title;
@@ -156,7 +122,74 @@ function updateShowroom() {
     showroomBg.style.backgroundImage = `url(${p.img})`;
     visitLink.href = p.visit;
     githubLink.href = p.github;
-
     card.classList.remove("fade");
-  }, 300); // duración del fade-out
+  }, 300);
 }
+
+// === FLECHAS (solo PC) ===
+const prevBtn = document.getElementById("prevProject");
+const nextBtn = document.getElementById("nextProject");
+
+if (prevBtn && nextBtn) {
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+    updateShowroom();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % projects.length;
+    updateShowroom();
+  });
+}
+
+// === AUTOPLAY EN MÓVIL ===
+function startAutoSlide() {
+  stopAutoSlide();
+  if (window.innerWidth <= 768) {
+    autoSlideInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % projects.length;
+      updateShowroom();
+    }, 4000);
+  }
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+}
+
+window.addEventListener("resize", startAutoSlide);
+
+// === SWIPE CON EL DEDO ===
+showroom.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+  stopAutoSlide(); // Pausar autoplay al tocar
+});
+
+showroom.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  const diff = startX - endX;
+
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) {
+      currentIndex = (currentIndex + 1) % projects.length;
+    } else {
+      currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+    }
+    updateShowroom();
+  }
+
+  // Reanudar autoplay después de soltar
+  startAutoSlide();
+});
+
+// === PAUSAR AUTOPLAY AL MANTENER EL DEDO (TOUCH HOLD) ===
+showroom.addEventListener("touchmove", stopAutoSlide);
+
+// === CLICK EN IMAGEN → abrir proyecto ===
+projectImage.addEventListener("click", () => {
+  window.open(projects[currentIndex].visit, "_blank");
+});
+
+// === INICIALIZAR ===
+updateShowroom();
+startAutoSlide();
