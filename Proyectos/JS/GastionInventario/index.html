@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor de Inventario</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gestor de Inventario</h1>
+    </header>
+
+    <nav class="menu-principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li>
+          <a href="./nuevoRepuesto/nuevo-repuesto.html">Registrar Repuesto</a>
+        </li>
+        <li><a href="./Stock/stock.html">Stock</a></li>
+        <li><a href="./registro/registro.html">Registro</a></li>
+        <li><a href="#">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="form-section" style="text-align: center">
+        <h2 style="text-align: center; margin-top: 40px; font-weight: 500">
+          Bienvenido al sistema de gestión de repuestos
+        </h2>
+        <p style="text-align: center; color: #555; margin-bottom: 30px">
+          Aquí podrás consultar, editar y administrar tu inventario actual.
+        </p>
+      </section>
+
+      <section class="table-section">
+        <h2>Inventario Actual</h2>
+        <input type="file" id="inputExcel" accept=".xlsx,.xls" />
+
+        <table id="tablaProductos">
+          <thead>
+            <tr>
+    <th>SKU</th>
+    <th>DESCRIPCIÓN</th>
+    <th>MARCA</th> <!-- ← Agregar esto -->
+    <th>SERIE</th> <!-- ← Y esto -->
+    <th>STOCK</th>
+    <th>FECHA</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div style="margin-bottom: 10px">
+          <button onclick="exportarExcel()">📄 Exportar a Excel</button>
+          <button onclick="exportarPDF()">🖨️ Exportar a PDF</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 - Panamerican Trading</p>
+    </footer>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+    <script src="script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+  </body>
+</html>

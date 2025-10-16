@@ -1,0 +1,413 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === MODO OSCURO POR DEFECTO === */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s;
+}
+
+h2 {
+  text-align: center;
+  color: #f8f9fa;
+}
+
+input,
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+input {
+  background: #444;
+  color: white;
+  border: 1px solid #666;
+}
+
+button {
+  background: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+  background: #218838;
+}
+
+#resultado,
+#resultadoDescripcion {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #333;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s;
+}
+
+.resultado-item {
+  background: #444;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+a {
+  color: #4ea8de;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.btn-ver {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 6px 12px;
+  background-color: #17a2b8;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-ver:hover {
+  background-color: #138496;
+}
+
+#overlay-carga {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.95);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+#overlay-carga.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spinner-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.loader {
+  border: 8px solid #ccc;
+  border-top: 8px solid #28a745;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+mark {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+}
+
+body.modo-claro {
+  background-color: #e7e7e7;
+  color: #1a1a1a;
+}
+
+body.modo-claro .container {
+  background: #f1f1f1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.modo-claro input {
+  background: #fff;
+  color: #111;
+  border: 1px solid #ccc;
+}
+
+body.modo-claro button {
+  background: #111;
+  color: white;
+}
+
+body.modo-claro button:hover, body.modo-claro .modo-btn:hover {
+  background: #000000c9;
+}
+
+body.modo-claro #resultado,
+body.modo-claro #resultadoDescripcion {
+  background: #e2e2e2;
+  color: #111;
+}
+
+body.modo-claro .resultado-item {
+  background: #ffffff;
+  color: #111;
+}
+
+body.modo-claro h2 {
+  color: #222 !important;
+}
+
+body.modo-claro label,
+body.modo-claro strong,
+body.modo-claro p {
+  color: #111;
+}
+
+body.modo-claro .modo-btn {
+  background: #333;
+  color: #fff;
+}
+
+.botonera .modo-btn {
+  padding: 8px 14px;
+  background: 28a745;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+body.modo-claro .modo-btn {
+  background: #000;
+  color: #CCC;
+}
+
+.file-label {
+  display: inline-block;
+  background: #28a745;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+.file-label:hover {
+  background: #218838;
+}
+.file-label input[type="file"] {
+  display: none;
+}
+
+#file-name {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  color: inherit;
+}
+
+body.modo-claro .file-label {
+  background: #111;
+  color: white;
+}
+body.modo-claro .file-label:hover {
+  background: #000;
+}
+
+.botonera {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.botonera button {
+  padding: 10px 14px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#buscarCodigoBtn,
+#limpiarBtn {
+  background: #28a745;
+  color: white;
+}
+#buscarCodigoBtn:hover,
+#limpiarBtn:hover {
+  background: #218838;
+}
+
+body.modo-claro #buscarCodigoBtn,
+body.modo-claro #limpiarBtn,
+body.modo-claro #toggle-modo {
+  background: #111;
+  color: white;
+}
+body.modo-claro #toggle-modo:hover {
+  background: #000;
+}
+
+.cancelar-btn {
+  margin-top: 15px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background: #dc3545;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cancelar-btn:hover {
+  background: #b52c3a;
+}
+
+/* ========== MODO RESPONSIVO ========== */
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input,
+  button,
+  .file-label,
+  .btn-ver {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .botonera {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+  .botonera button{
+    margin: 6px 0;
+  }
+
+  #toggle-modo {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #file-name {
+    display: block;
+    margin-top: 8px;
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .resultado-item {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .modo-btn {
+    position: static;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  #resultado,
+  #resultadoDescripcion {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .resultado-item {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 18px;
+  }
+
+  input,
+  button,
+  .file-label,
+  .btn-ver {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+  .loader-text {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .cancelar-btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .modo-btn {
+    font-size: 14px;
+  }
+
+  mark {
+    font-size: inherit;
+  }
+}

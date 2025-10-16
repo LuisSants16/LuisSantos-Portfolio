@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar Nuevo Repuesto</title>
+    <link rel="stylesheet" href="nuevo-repuesto.css" />
+  </head>
+  <body>
+    <h1>Registrar Nuevo Repuesto</h1>
+
+    <nav class="menu-principal">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li>
+          <a href="./nuevo-repuesto.html">Registrar Repuesto</a>
+        </li>
+        <li><a href="../Stock/stock.html">Stock</a></li>
+        <li><a href="../registro/registro.html">Registro</a></li>
+        <li><a href="#">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <form id="formularioNuevo">
+      <label for="sku">Código (SKU):</label>
+      <input type="text" id="sku" required />
+
+      <label for="descripcion">Descripción:</label>
+      <input type="text" id="descripcion" required />
+
+      <label>
+        <input type="checkbox" id="activarSerie" />
+        Activar serie
+      </label>
+
+      <div id="serieCampo" style="display: none">
+        <label for="serie">Serie:</label>
+        <input type="text" id="serie" />
+      </div>
+
+      <label for="marca">Marca / Proveedor:</label>
+      <input type="text" id="marca" required />
+
+      <button type="submit">Registrar Código</button>
+    </form>
+
+    <hr />
+
+    <h2 style="text-align: center">Códigos Registrados</h2>
+
+    <div class="contenedor-completo">
+      <div class="buscador">
+        <input type="text" id="buscador" placeholder="🔍 Buscar" />
+        <div class="filtros">
+          <button class="activo" data-filtro="todos">
+            Todos <span id="totalTodos">0</span>
+          </button>
+          <button data-filtro="conSerie">
+            Productos <span id="totalConSerie">0</span>
+          </button>
+          <button data-filtro="sinSerie">
+            Servicios <span id="totalSinSerie">0</span>
+          </button>
+        </div>
+      </div>
+
+      <table id="tablaRegistros">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Descripción</th>
+            <th>Serie</th>
+            <th>Marca</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script src="nuevo-repuesto.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  </body>
+</html>

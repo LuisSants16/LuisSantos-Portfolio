@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control de Movimientos de Inventario</title>
+    <link rel="stylesheet" href="registro.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gestión de Stock</h1>
+    </header>
+
+    <nav class="menu-principal">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li>
+          <a href="../nuevoRepuesto/nuevo-repuesto.html">Registrar Repuesto</a>
+        </li>
+        <li><a href="../Stock/stock.html">Stock</a></li>
+        <li><a href="registro.html" class="activo">Registro</a></li>
+        <li><a href="#">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <nav>
+      <button id="tabEntradas" class="tab active">Entradas</button>
+      <button id="tabSalidas" class="tab">Salidas</button>
+    </nav>
+
+    <section id="entradas" class="tab-content active">
+      <div class="filtros">
+        <input type="date" id="fechaInicioEntradas" />
+        <input type="date" id="fechaFinEntradas" />
+        <input
+          type="text"
+          id="buscadorEntradas"
+          placeholder="Buscar SKU o descripción"
+        />
+      </div>
+      <table id="tablaEntradas">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Descripción</th>
+            <th>Serie</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+            <th>Responsable</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="salidas" class="tab-content">
+      <div class="filtros">
+        <input type="date" id="fechaInicioSalidas" />
+        <input type="date" id="fechaFinSalidas" />
+        <input
+          type="text"
+          id="buscadorSalidas"
+          placeholder="Buscar SKU o descripción"
+        />
+      </div>
+      <table id="tablaSalidas">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Descripción</th>
+            <th>Serie</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+            <th>Responsable</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <script src="registro.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscar Código en Archivos</title>
+
+    <link rel="shortcut icon" href="./ico/view.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Buscar Código en Archivos Excel y Word</h2>
+      <label for="fileInput" class="file-label">
+        📁 Elegir archivos
+        <input
+          type="file"
+          id="fileInput"
+          webkitdirectory
+          multiple
+          accept=".xlsx, .xls, .docx"
+        />
+      </label>
+      <span id="file-name">Ningún archivo seleccionado</span>
+
+      <input type="text" id="codigo" placeholder="Ingrese el código a buscar" />
+
+      <div class="botonera">
+        <button id="buscarCodigoBtn">Buscar</button>
+        <button id="limpiarBtn">Limpiar</button>
+        <button id="toggle-modo" class="modo-btn">🌓 Cambiar modo</button>
+      </div>
+
+      <div id="resultado"></div>
+
+      <h2>Buscar por Descripción</h2>
+      <input
+        type="text"
+        id="descripcion"
+        placeholder="Ingrese la descripción a buscar"
+      />
+      <button id="buscarDescripcionBtn">Buscar</button>
+      <div id="resultadoDescripcion"></div>
+    </div>
+
+    <div id="overlay-carga">
+      <div class="spinner-box">
+        <div class="loader-text">
+          🔄 Cargando resultados, por favor espere...
+        </div>
+        <div class="loader"></div>
+        <button id="cancelar-busqueda" class="cancelar-btn">❌ Cancelar</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

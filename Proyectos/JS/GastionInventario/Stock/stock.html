@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Stock</title>
+    <link rel="stylesheet" href="stock.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gestión de Stock</h1>
+    </header>
+
+    <nav class="menu-principal">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li>
+          <a href="../nuevoRepuesto/nuevo-repuesto.html">Registrar Repuesto</a>
+        </li>
+        <li><a href="./stock.html">Stock</a></li>
+        <li><a href="../registro/registro.html">Registro</a></li>
+        <li><a href="#">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="agregar">Agregar</button>
+      <button class="tab" data-tab="consumo">Consumo</button>
+    </div>
+
+    <main>
+      <section id="agregar" class="tab-content active">
+        <form id="formularioAgregarStock">
+          <div class="form-group">
+            <label for="skuBuscar">Código SKU:</label>
+              <input type="text" id="skuBuscar" placeholder="Código SKU">
+              <input type="text" id="descripcionProducto" placeholder="Descripción" readonly>
+          </div>
+          
+          <div id="serieContenedor" class="form-group"></div>
+          <div class="form-group">
+            <label for="cantidad">Cantidad a agregar:</label>
+            <input type="number" id="cantidad" min="1" required />
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required />
+          </div>
+          <button type="submit">Sumar al stock</button>
+        </form>
+      </section>
+
+      <section id="consumo" class="tab-content">
+        <form id="formularioConsumo">
+          <div class="form-group">
+            <label for="tipoConsumo">Tipo de Consumo:</label>
+            <select id="tipoConsumo" required>
+              <option value="Retiro">Retiro</option>
+              <option value="Mermas">Mermas</option>
+              <option value="Desmedro">Desmedro</option>
+              <option value="Destrucción">Destrucción</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notaConsumo">Nota / detalle:</label>
+            <input
+              type="text"
+              id="notaConsumo"
+              placeholder="Motivo o detalle"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="skuConsumo">Código SKU:</label>
+            <input type="text" id="skuConsumo" required />
+            <input type="text" id="descripcionConsumo" placeholder="Descripción" readonly>
+          </div>
+
+          <div class="form-group">
+            <label for="cantidadConsumo">Cantidad consumida:</label>
+            <input type="number" id="cantidadConsumo" min="1" required />
+          </div>
+
+          <button type="submit">➖ Agregar consumo</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="stock.js"></script>
+  </body>
+</html>
