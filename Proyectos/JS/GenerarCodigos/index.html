@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Generador de Códigos SKU</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🧾 Generador de Códigos SKU</h1>
+
+      <div class="form-group">
+        <input
+          type="text"
+          id="descripcion"
+          placeholder="Ingrese descripción del producto"
+        />
+        <button onclick="agregarProducto()">Agregar producto</button>
+      </div>
+
+      <input
+        type="text"
+        id="busqueda"
+        placeholder="Buscar por descripción o SKU..."
+        oninput="filtrarTabla()"
+      />
+
+      <div class="form-group">
+        <label for="limiteRegistros">Mostrar</label>
+        <select id="limiteRegistros" onchange="mostrarTabla()">
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+        <span>registros</span>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Descripción</th>
+            <th>SKU</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaProductos"></tbody>
+      </table>
+
+      <div id="paginacion" class="paginacion"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

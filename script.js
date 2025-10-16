@@ -78,3 +78,85 @@ document.addEventListener('keydown', (e) => {
     document.body.style.overflow = "auto";
   }
 });
+
+// ===== SHOWROOM =====
+const projects = [
+  {
+    title: "Phonebook App",
+    desc: "Aplicación para registrar, buscar , editar y eliminar contactos con una interfaz moderna e intuitiva.",
+    img: "img/showroom1.jpg",
+    visit: "https://ejemplo-phonebook.com",
+    github: "https://github.com/luissant16/phonebook"
+  },
+  {
+    title: "Company Calendar",
+    desc: "Calendario empresarial para gestionar reuniones y fechas legales importantes.",
+    img: "img/showroom2.jpg",
+    visit: "https://ejemplo-calendar.com",
+    github: "https://github.com/luissant16/calendar"
+  }
+];
+
+let currentIndex = 0;
+
+const projectImage = document.getElementById("projectImage");
+const projectTitle = document.getElementById("projectTitle");
+const projectDesc = document.getElementById("projectDesc");
+const showroomBg = document.getElementById("showroomBg");
+const visitLink = document.getElementById("visitLink");
+const githubLink = document.getElementById("githubLink");
+
+// === FUNCIÓN PRINCIPAL ===
+function updateShowroom() {
+  const p = projects[currentIndex];
+  projectImage.src = p.img;
+  projectTitle.textContent = p.title;
+  projectDesc.textContent = p.desc;
+  showroomBg.style.backgroundImage = `url(${p.img})`;
+
+  // 🔗 Actualizar enlaces
+  visitLink.href = p.visit;
+  githubLink.href = p.github;
+}
+
+// === EVENTOS ===
+
+// Click en la imagen → abre el proyecto
+projectImage.addEventListener("click", () => {
+  window.open(projects[currentIndex].visit, "_blank");
+});
+
+// Flecha izquierda
+document.getElementById("prevProject").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+  updateShowroom();
+});
+
+// Flecha derecha
+document.getElementById("nextProject").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % projects.length;
+  updateShowroom();
+});
+
+// Inicializar showroom al cargar
+updateShowroom();
+
+
+function updateShowroom() {
+  const p = projects[currentIndex];
+  const card = document.querySelector(".showroom-card");
+
+  // 🔹 efecto de desvanecimiento
+  card.classList.add("fade");
+
+  setTimeout(() => {
+    projectImage.src = p.img;
+    projectTitle.textContent = p.title;
+    projectDesc.textContent = p.desc;
+    showroomBg.style.backgroundImage = `url(${p.img})`;
+    visitLink.href = p.visit;
+    githubLink.href = p.github;
+
+    card.classList.remove("fade");
+  }, 300); // duración del fade-out
+}
