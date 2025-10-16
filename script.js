@@ -1,3 +1,4 @@
+// === MENÚ HAMBURGUESA ===
 const menuIcon = document.getElementById('menuIcon');
 const sideMenu = document.getElementById('sideMenu');
 const closeIcons = document.querySelectorAll('.close-icon'); // incluye la del header y la del overlay
@@ -13,7 +14,7 @@ function closeMenu() {
   const closeBtn = sideMenu.querySelector('.close-icon');
   if (closeBtn) closeBtn.style.display = 'none';
 
-  // cierra el menú visualmente
+  // Cierra el menú visualmente
   menuIcon.classList.remove('active');
   sideMenu.classList.remove('active');
   document.body.classList.remove('no-scroll', 'menu-open');
@@ -37,20 +38,43 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ==== POPUP DE 3 PROYECTOS ====
-const toolCards = document.querySelectorAll('.tool-card');
-const popupOverlay = document.getElementById('popupOverlay');
-const closePopup = document.querySelector('.close-popup');
 
-// Mostrar el popup al hacer clic en cualquier tarjeta
+// === POPUPS POR CATEGORÍA ===
+const toolCards = document.querySelectorAll('.tool-card');
+const popups = document.querySelectorAll('.popup-overlay');
+const closeButtons = document.querySelectorAll('.close-popup');
+
+// Abrir el popup correcto
 toolCards.forEach(card => {
   card.addEventListener('click', () => {
-    popupOverlay.classList.add('active');
+    const popupId = card.getAttribute('data-popup');
+    document.getElementById(popupId).classList.add('active');
+    document.body.style.overflow = "hidden"; // 🚫 Deshabilita scroll al abrir
   });
 });
 
-// Cerrar al hacer clic en la X o fuera del popup
-closePopup.addEventListener('click', () => popupOverlay.classList.remove('active'));
-popupOverlay.addEventListener('click', e => {
-  if (e.target === popupOverlay) popupOverlay.classList.remove('active');
+// Cerrar popups (botón X)
+closeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.popup-overlay').classList.remove('active');
+    document.body.style.overflow = "auto"; // ✅ Restaura scroll
+  });
+});
+
+// Cerrar al hacer clic fuera del contenido
+popups.forEach(popup => {
+  popup.addEventListener('click', e => {
+    if (e.target === popup) {
+      popup.classList.remove('active');
+      document.body.style.overflow = "auto"; // ✅ Restaura scroll
+    }
+  });
+});
+
+// Cerrar popups con tecla ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    popups.forEach(popup => popup.classList.remove('active'));
+    document.body.style.overflow = "auto";
+  }
 });

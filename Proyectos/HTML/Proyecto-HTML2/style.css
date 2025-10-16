@@ -1,0 +1,21 @@
+body{
+    font-family: comic sans;
+    line-height: 22px;
+    padding: 10px;
+    background: rgb(238, 233, 233);
+    font-size: 17px;
+}
+
+h3 a{
+    
+    font-weight: bolder;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a img{
+    padding: 20px;
+}

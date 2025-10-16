@@ -43,7 +43,6 @@
         <li><a href="#">RESUME</a></li>
         <li><a href="#">CONTACT</a></li>
       </ul>
-
     </nav>
 
     <section class="hero" id="hero">
@@ -68,39 +67,47 @@
       </div>
     </section>
 
+    <!-- ======= TOOLING ======= -->
     <section class="tooling">
       <h2 class="tooling-title">TOOLING</h2>
 
       <div class="tooling-grid">
-        <div class="tool-card html">
+        <div class="tool-card html" data-popup="popupHTML">
           <i class="fa-brands fa-html5"></i>
           <span>HTML5</span>
         </div>
-        <div class="tool-card css">
+
+        <div class="tool-card css" data-popup="popupCSS">
           <i class="fa-brands fa-css3-alt"></i>
           <span>CSS3</span>
         </div>
-        <div class="tool-card js">
+
+        <div class="tool-card js" data-popup="popupJS">
           <i class="fa-brands fa-square-js"></i>
           <span>JavaScript</span>
         </div>
       </div>
     </section>
 
-    <!-- 🔹 POPUP GENERAL (muestra los 3 proyectos) -->
-    <div class="popup-overlay" id="popupOverlay">
+    <!-- 🔹 POPUP HTML -->
+    <div class="popup-overlay" id="popupHTML">
       <div class="popup-wrapper">
         <span class="close-popup">&times;</span>
-        <h3 class="popup-title">Proyectos Front-End</h3>
+        <h3 class="popup-title">Proyectos en HTML5</h3>
+
         <div class="popup-container">
           <div class="popup-card">
-            <h3>Proyecto HTML5</h3>
-            <img src="img/proyecto-html.jpg" alt="Proyecto HTML5" />
+            <h3>Proyecto HTML5 – Diseño Web</h3>
+            <img
+              src="./Proyectos/HTML/Proyecto-HTML1/portadahtml1.png"
+              alt="Proyecto HTML5 1"
+            />
             <p>
-              Página creada con estructura semántica y diseño limpio en HTML5.
+              Sitio informativo sobre diseño web, creado con estructura
+              semántica en HTML5.
             </p>
             <a
-              href="https://tusitio.com/proyecto-html"
+              href="./Proyectos/HTML/Proyecto-HTML1/"
               target="_blank"
               class="popup-btn"
               >Ver proyecto completo</a
@@ -108,13 +115,17 @@
           </div>
 
           <div class="popup-card">
-            <h3>Proyecto CSS3</h3>
-            <img src="img/proyecto-css.jpg" alt="Proyecto CSS3" />
+            <h3>Proyecto HTML5 – Geografía</h3>
+            <img
+              src="./Proyectos/HTML/Proyecto-HTML2/img/portadaHtml2.png"
+              alt="Proyecto HTML5 2"
+            />
             <p>
-              Proyecto con estilos modernos, animaciones y layout responsive.
+              Página educativa sobre la Geografía, su importancia y ramas
+              principales.
             </p>
             <a
-              href="https://tusitio.com/proyecto-css"
+              href="./Proyectos/HTML/Proyecto-HTML2/"
               target="_blank"
               class="popup-btn"
               >Ver proyecto completo</a
@@ -122,14 +133,131 @@
           </div>
 
           <div class="popup-card">
-            <h3>Proyecto JavaScript</h3>
-            <img src="img/proyecto-js.jpg" alt="Proyecto JavaScript" />
+            <h3>Proyecto HTML5 – Grecia</h3>
+            <img
+              src="./Proyectos/HTML/Proyecto-HTML3/HTML5 and CSS3 - Sesion 03(Diagramar con HTML5 y CSS3.)/portadaHtml3.png"
+              alt="Proyecto HTML5 3"
+            />
             <p>
-              App interactiva desarrollada con JavaScript puro y funciones
-              dinámicas.
+              Sitio informativo sobre la antigua Grecia y la leyenda del héroe
+              Perseo.
             </p>
             <a
-              href="https://tusitio.com/proyecto-js"
+              href="./Proyectos/HTML/Proyecto-HTML3/"
+              target="_blank"
+              class="popup-btn"
+              >Ver proyecto completo</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔹 POPUP CSS -->
+    <div class="popup-overlay" id="popupCSS">
+      <div class="popup-wrapper">
+        <span class="close-popup">&times;</span>
+        <h3 class="popup-title">Proyectos en CSS3</h3>
+
+        <div class="popup-container">
+          <div class="popup-card">
+            <h3>Proyecto CSS3 – Animaciones</h3>
+            <img
+              src="./Proyectos/CSS/Proyecto-CSS1/portada-css1.png"
+              alt="Proyecto CSS3 1"
+            />
+            <p>
+              Animaciones suaves y efectos de hover con transiciones fluidas.
+            </p>
+            <a
+              href="./Proyectos/CSS/Proyecto-CSS1/"
+              target="_blank"
+              class="popup-btn"
+              >Ver proyecto completo</a
+            >
+          </div>
+
+          <div class="popup-card">
+            <h3>Proyecto CSS3 – Maquetación</h3>
+            <img
+              src="./Proyectos/CSS/Proyecto-CSS2/portada-css2.png"
+              alt="Proyecto CSS3 2"
+            />
+            <p>Maquetación moderna utilizando Flexbox y CSS Grid.</p>
+            <a
+              href="./Proyectos/CSS/Proyecto-CSS2/"
+              target="_blank"
+              class="popup-btn"
+              >Ver proyecto completo</a
+            >
+          </div>
+
+          <div class="popup-card">
+            <h3>Proyecto CSS3 – Efectos 3D</h3>
+            <img
+              src="./Proyectos/CSS/Proyecto-CSS3/portada-css3.png"
+              alt="Proyecto CSS3 3"
+            />
+            <p>Efectos 3D, sombras dinámicas y estilo neón con puro CSS.</p>
+            <a
+              href="./Proyectos/CSS/Proyecto-CSS3/"
+              target="_blank"
+              class="popup-btn"
+              >Ver proyecto completo</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔹 POPUP JAVASCRIPT -->
+    <div class="popup-overlay" id="popupJS">
+      <div class="popup-wrapper">
+        <span class="close-popup">&times;</span>
+        <h3 class="popup-title">Proyectos en JavaScript</h3>
+
+        <div class="popup-container">
+          <div class="popup-card">
+            <h3>Proyecto JS – App Interactiva</h3>
+            <img
+              src="./Proyectos/JS/Proyecto-JS1/portada-js1.png"
+              alt="Proyecto JS 1"
+            />
+            <p>Aplicación dinámica con eventos y manipulación del DOM.</p>
+            <a
+              href="./Proyectos/JS/Proyecto-JS1/"
+              target="_blank"
+              class="popup-btn"
+              >Ver proyecto completo</a
+            >
+          </div>
+
+          <div class="popup-card">
+            <h3>Proyecto JS – Juego Simple</h3>
+            <img
+              src="./Proyectos/JS/Proyecto-JS2/portada-js2.png"
+              alt="Proyecto JS 2"
+            />
+            <p>Mini juego desarrollado con lógica pura de JavaScript.</p>
+            <a
+              href="./Proyectos/JS/Proyecto-JS2/"
+              target="_blank"
+              class="popup-btn"
+              >Ver proyecto completo</a
+            >
+          </div>
+
+          <div class="popup-card">
+            <h3>Proyecto JS – Formulario</h3>
+            <img
+              src="./Proyectos/JS/Proyecto-JS3/portada-js3.png"
+              alt="Proyecto JS 3"
+            />
+            <p>
+              Formulario con validaciones, animaciones y alertas personalizadas.
+            </p>
+            <a
+              href="./Proyectos/JS/Proyecto-JS3/"
               target="_blank"
               class="popup-btn"
               >Ver proyecto completo</a

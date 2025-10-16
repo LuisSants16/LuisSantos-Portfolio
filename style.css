@@ -230,24 +230,19 @@ body.menu-open .navbar {
 /* ==== HERO SECTION ==== */
 .hero {
   display: flex;
-  justify-content: center; /* centra horizontalmente */
-  align-items: center; /* centra verticalmente */
-  gap: 80px; /* espacio entre texto e imagen */
-  padding: 0 8%;
-  min-height: 100vh;
-  background: radial-gradient(circle at 20% 30%, #02132b, #010913 70%);
-  background-image: repeating-radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0.03) 1px,
-    transparent 100px
-  );
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 0 8%; /* 🔹 solo padding lateral */
+  min-height: calc(100vh - 70px); /* 🔹 resta la altura del header fijo */
   color: #e4f0fb;
   overflow: hidden;
+  margin-top: 70px; /* 🔹 igual al alto del header */
 }
 
 /* CONTENIDO */
 .hero-content {
-  max-width: 640px;
+  max-width: 650px;
   text-align: left;
 }
 
@@ -315,7 +310,7 @@ body.menu-open .navbar {
   width: 100%;
   padding: 100px 0;
   text-align: center;
-  background: #0b1220;
+  background: #000114;
 }
 
 .tooling-title {
@@ -424,58 +419,63 @@ body.menu-open .navbar {
 .popup-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: stretch; /* todas las tarjetas igual de altas */
   gap: 30px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
 }
 
 .popup-card {
-  background: #0f192d;
+  background: #0b1220;
   border: 2px solid #00e5ff;
-  border-radius: 14px;
+  border-radius: 16px;
+  width: 300px;
+  height: 430px; /* 🔹 altura fija uniforme */
   padding: 20px;
-  width: 30%;
-  min-width: 280px;
   text-align: center;
-  box-shadow: 0 0 20px #00e5ff33;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 25px #00e5ff33;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .popup-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 30px #00e5ff99;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00e5ff88;
 }
 
 .popup-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 150px; /* 🔹 fija el alto para que no varíe */
+  object-fit: cover; /* recorta sin deformar */
   border-radius: 10px;
   margin-bottom: 15px;
 }
 
 .popup-card h3 {
   color: #00e5ff;
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .popup-card p {
   color: #bfcfe3;
-  font-size: 15px;
-  margin-bottom: 15px;
+  font-size: 14px;
   line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1; /* hace que el texto se adapte al espacio */
 }
 
 .popup-btn {
-  display: inline-block;
   background: #00e5ff;
   color: #0b1220;
   font-weight: 700;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
+  align-self: center;
 }
 
 .popup-btn:hover {
@@ -509,22 +509,6 @@ body.menu-open .navbar {
   }
 }
 
-/* ==== RESPONSIVE ==== */
-@media (max-width: 1024px) {
-  .popup-card {
-    width: 45%;
-  }
-}
-@media (max-width: 700px) {
-  .popup-card {
-    width: 100%;
-  }
-}
-
-/* =========================
-   📱 TABLET ≤1024px
-   — Apila el hero y ajusta tamaños —
-========================= */
 @media (max-width: 1024px) {
   .hero {
     flex-direction: column-reverse;
@@ -550,10 +534,29 @@ body.menu-open .navbar {
   .hero-image img {
     width: 300px;
   }
+
+  .popup-container {
+    gap: 25px;
+  }
+
+  .popup-card {
+    width: 280px;
+    height: 420px;
+  }
+
+  .popup-card h3 {
+    font-size: 17px;
+  }
+
+  .popup-card p {
+    font-size: 13px;
+  }
+
+  .popup-wrapper {
+    max-width: 900px;
+  }
 }
-/* =========================
-   📲 MÓVIL ≤768px — Versión final con FLEX (50% / 50%)
-========================= */
+
 @media (max-width: 768px) {
   /* ===== Ocultar header al abrir menú ===== */
   body.menu-open .navbar {
@@ -730,11 +733,38 @@ body.menu-open .navbar {
   .hero-image img {
     width: 240px;
   }
+
+  .popup-container {
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 0;
+  }
+
+  .popup-card {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: auto !important;
+  }
+
+  .popup-card img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .popup-overlay {
+    align-items: flex-start;
+    padding: 0;
+    overflow-y: auto;
+  }
+
+  .popup-wrapper {
+    max-height: calc(100vh - 40px);
+    overflow: auto;
+    margin-top: 12px;
+  }
 }
 
-/* =========================
-   📱 Pequeños ≤480px (finos)
-========================= */
 @media (max-width: 480px) {
   .nav-links a {
     font-size: 20px;
@@ -744,5 +774,34 @@ body.menu-open .navbar {
   }
   .socials i {
     font-size: 20px;
+  }
+
+  .popup-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .popup-card {
+    width: 90%;
+    height: auto;
+    padding: 18px;
+  }
+
+  .popup-card img {
+    height: 130px;
+  }
+
+  .popup-card h3 {
+    font-size: 16px;
+  }
+
+  .popup-card p {
+    font-size: 13px;
+  }
+
+  .popup-btn {
+    width: 100%;
+    padding: 10px 0;
   }
 }
