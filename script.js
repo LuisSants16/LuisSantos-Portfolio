@@ -82,18 +82,18 @@ document.addEventListener('keydown', (e) => {
 // ===== SHOWROOM =====
 const projects = [
   {
-    title: "Phonebook App",
-    desc: "Aplicación para registrar, buscar , editar y eliminar contactos con una interfaz moderna e intuitiva.",
-    img: "img/showroom1.jpg",
-    visit: "https://ejemplo-phonebook.com",
-    github: "https://github.com/luissant16/phonebook"
+    title: "Proyecto MASCH",
+    desc: "Sitio web profesional desarrollado para Miguel Ángel Santos Chinchón, especialista en acabados de construcción.",
+    img: "img/showroom1.png",
+    visit: "https://luissants16.github.io/Masch/",
+    github: "https://github.com/LuisSants16/Masch"
   },
   {
-    title: "Company Calendar",
-    desc: "Calendario empresarial para gestionar reuniones y fechas legales importantes.",
-    img: "img/showroom2.jpg",
-    visit: "https://ejemplo-calendar.com",
-    github: "https://github.com/luissant16/calendar"
+    title: "Proyecto Control de Gastos Diario",
+    desc: "App web para registrar y organizar tus gastos diarios con diseño moderno.",
+    img: "img/showroom2.png",
+    visit: "https://luissants16.github.io/ControlGastos/",
+    github: "https://github.com/LuisSants16/ControlGastos"
   }
 ];
 
