@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: monospace;
+  font-family: "Intel One Mono";
 }
 
 body {
@@ -319,10 +319,13 @@ body.menu-open .navbar {
 
 /* Animación del fondo */
 @keyframes moverDegradado {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
-
 
 .tooling-title {
   font-size: 36px;
@@ -761,12 +764,16 @@ body.menu-open .navbar {
 }
 
 @keyframes moverDegradado {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .frase-texto {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 1.6rem;
   color: #e5e5e5;
   line-height: 1.6;
@@ -791,6 +798,110 @@ body.menu-open .navbar {
 .quote.right {
   bottom: -45px;
   right: 35px;
+}
+/* === CONNECT SECTION === */
+.connect {
+  background-color: #000a1b;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  padding: 100px 0 0;
+}
+
+/* === TÍTULO NEÓN === */
+.connect-title {
+  display: inline-block;
+  color: #00ff88;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: 2px solid #00ff88;
+  border-radius: 15px;
+  padding: 10px 30px;
+  box-shadow: 0 0 15px #00ff88, inset 0 0 10px #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+  margin-bottom: 60px;
+  background: rgba(0, 255, 136, 0.05);
+}
+
+/* === GRID DE REDES === */
+.connect-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  min-height: 220px;
+}
+
+/* === ITEMS === */
+.connect-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.connect-item i {
+  font-size: 2.4rem;
+}
+
+.connect-item:hover {
+  filter: brightness(1.2);
+  transform: scale(1.03);
+}
+
+/* === COLORES === */
+.github {
+  background-color: #24292e;
+}
+.linkedin {
+  background-color: #0077b5;
+}
+.instagram {
+  background-color: #e1306c;
+}
+.facebook {
+  background-color: #1877f2;
+}
+
+/* === BOTÓN MAIL === */
+.connect-mail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: #00ff6a;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 25px 0;
+  transition: all 0.3s ease;
+}
+
+.connect-mail:hover {
+  background-color: #00cc77;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
+  transform: scale(1.03);
+}
+
+/* === FOOTER === */
+.footer {
+  background-color: #11161d;
+  color: #00ff6a;
+  font-size: 0.95rem;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 1024px) {
@@ -854,7 +965,7 @@ body.menu-open .navbar {
     font-size: 55px;
   }
 
-    .frase-destacada {
+  .frase-destacada {
     padding: 100px 30px;
   }
 
@@ -879,6 +990,25 @@ body.menu-open .navbar {
   .quote.right {
     bottom: -35px;
     right: 25px;
+  }
+
+  .connect-title {
+    font-size: 1.8rem;
+    padding: 8px 25px;
+  }
+
+  .connect-grid {
+    grid-template-columns: repeat(2, 1fr);
+    min-height: auto;
+  }
+
+  .connect-item {
+    padding: 40px 0;
+    font-size: 1.3rem;
+  }
+
+  .connect-item i {
+    font-size: 2rem;
   }
 }
 
@@ -1144,6 +1274,61 @@ body.menu-open .navbar {
     right: 20px;
   }
 
+  .connect {
+    padding: 80px 0 0;
+  }
+
+  .connect-title {
+    font-size: 1.6rem;
+  }
+
+    /* 🔸 Una sola columna */
+  .connect-grid {
+    grid-template-columns: 1fr;
+    margin-top: 10px;
+  }
+
+  /* === Cada red + botón verde === */
+  .connect-item,
+  .connect-mail {
+    display: flex;
+    justify-content: space-between; /* texto izquierda / icono derecha */
+    align-items: center;
+    flex-direction: row-reverse;
+    text-align: left;
+    width: 100%;
+    height: 65px; /* mismo alto para todos */
+    padding: 0 25px;
+    font-size: 1.1rem;
+    gap: 0;
+  }
+
+  /* === Íconos más equilibrados === */
+  .connect-item i,
+  .connect-mail i {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  /* === Texto horizontal limpio === */
+  .connect-item span,
+  .connect-mail span {
+    writing-mode: horizontal-tb;
+    transform: none;
+    margin: 0;
+  }
+
+  /* === Botón verde igual a las redes === */
+  .connect-mail {
+    color: #000;
+    font-weight: 700;
+    background-color: #00ff6a;
+  }
+
+  .connect-mail:hover {
+    background-color: #00cc77;
+    transform: scale(1.02);
+  }
 }
 
 @media (max-width: 480px) {
