@@ -192,4 +192,3 @@ projectImage.addEventListener("click", () => {
 // === INICIALIZAR ===
 updateShowroom();
 startAutoSlide();
-
