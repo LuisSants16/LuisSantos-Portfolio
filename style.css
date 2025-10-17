@@ -310,8 +310,19 @@ body.menu-open .navbar {
   width: 100%;
   padding: 100px 0;
   text-align: center;
-  background: #000114;
+
+  /* 🌈 Fondo animado */
+  background: linear-gradient(120deg, #000114, #001122, #002a22);
+  background-size: 200% 200%;
+  animation: moverDegradado 4s infinite alternate ease-in-out;
 }
+
+/* Animación del fondo */
+@keyframes moverDegradado {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
 
 .tooling-title {
   font-size: 36px;
@@ -707,6 +718,81 @@ body.menu-open .navbar {
   margin-left: 20px;
 }
 
+.frase-destacada {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 120px 40px;
+}
+
+/* Fondo de VANTA */
+.vanta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Fondo degradado animado encima del VANTA */
+.frase-destacada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #000114, #001122, #002a22);
+  background-size: 200% 200%;
+  animation: moverDegradado 4s infinite alternate ease-in-out;
+  opacity: 0.5; /* 💡 deja ver VANTA debajo */
+  z-index: 1;
+}
+
+/* Contenido */
+.frase-contenedor {
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00ff88;
+  border-radius: 15px;
+  padding: 70px 50px;
+  max-width: 1100px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.25);
+  z-index: 2;
+}
+
+@keyframes moverDegradado {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.frase-texto {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.6rem;
+  color: #e5e5e5;
+  line-height: 1.6;
+  z-index: 2;
+  position: relative;
+}
+
+/* === ICONOS === */
+.quote {
+  position: absolute;
+  color: #00ff88;
+  font-size: 70px;
+  filter: drop-shadow(0 0 10px #00ff88);
+  opacity: 0.9;
+}
+
+.quote.left {
+  top: -45px;
+  left: 35px;
+}
+
+.quote.right {
+  bottom: -45px;
+  right: 35px;
+}
+
 @media (max-width: 1024px) {
   .hero {
     flex-direction: column-reverse;
@@ -766,6 +852,33 @@ body.menu-open .navbar {
 
   .arrow {
     font-size: 55px;
+  }
+
+    .frase-destacada {
+    padding: 100px 30px;
+  }
+
+  .frase-contenedor {
+    padding: 60px 40px;
+    max-width: 90%;
+  }
+
+  .frase-texto {
+    font-size: 1.4rem;
+  }
+
+  .quote {
+    font-size: 55px;
+  }
+
+  .quote.left {
+    top: -35px;
+    left: 25px;
+  }
+
+  .quote.right {
+    bottom: -35px;
+    right: 25px;
   }
 }
 
@@ -1003,6 +1116,34 @@ body.menu-open .navbar {
   #nextProject {
     display: none !important;
   }
+
+  .frase-destacada {
+    padding: 90px 25px;
+  }
+
+  .frase-contenedor {
+    padding: 50px 30px;
+  }
+
+  .frase-texto {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .quote {
+    font-size: 45px;
+  }
+
+  .quote.left {
+    top: -28px;
+    left: 20px;
+  }
+
+  .quote.right {
+    bottom: -28px;
+    right: 20px;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -1082,5 +1223,33 @@ body.menu-open .navbar {
     margin-top: 30px;
     padding: 10px 25px;
     font-size: 14px;
+  }
+
+  .frase-destacada {
+    padding: 70px 15px;
+  }
+
+  .frase-contenedor {
+    padding: 35px 20px;
+  }
+
+  .frase-texto {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .quote {
+    font-size: 35px;
+    opacity: 0.8;
+  }
+
+  .quote.left {
+    top: -20px;
+    left: 15px;
+  }
+
+  .quote.right {
+    bottom: -20px;
+    right: 15px;
   }
 }

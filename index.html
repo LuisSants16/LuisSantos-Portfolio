@@ -41,7 +41,13 @@
         <li><a href="./index.html">INICIO</a></li>
         <li><a href="#">PROYECTOS</a></li>
         <li><a href="#">BLOG</a></li>
-        <li><a href="https://drive.google.com/file/d/1ohDpqIiA4zgqjjrSJusFnSRA7u7mhaVG/view?usp=sharing" target="_blank">PERFIL</a></li>
+        <li>
+          <a
+            href="https://drive.google.com/file/d/1ohDpqIiA4zgqjjrSJusFnSRA7u7mhaVG/view?usp=sharing"
+            target="_blank"
+            >PERFIL</a
+          >
+        </li>
         <li><a href="#">CONTACTO</a></li>
       </ul>
     </nav>
@@ -319,6 +325,18 @@
       <a href="#" class="showroom-viewall">Ver todos los proyectos</a>
     </section>
 
+    <section class="frase-destacada">
+      <div class="vanta-bg" id="vanta-bg"></div>
+      <div class="frase-contenedor">
+        <i class="fa-solid fa-quote-left quote left"></i>
+        <p class="frase-texto">
+          Amante del código limpio, la tecnología y aprender siempre lo nuevo y
+          curioso.
+        </p>
+        <i class="fa-solid fa-quote-right quote right"></i>
+      </div>
+    </section>
+
     <script src="script.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
@@ -330,6 +348,16 @@
         backgroundColor: 0x0b1220,
         points: 20.0,
         maxDistance: 8.0,
+        spacing: 25.0,
+      });
+    </script>
+    <script>
+      VANTA.NET({
+        el: "#vanta-bg",
+        color: 0xffffff,
+        backgroundColor: 0x000114,
+        points: 20.0,
+        maxDistance: 5.0,
         spacing: 25.0,
       });
     </script>
