@@ -899,14 +899,13 @@ body.menu-open .navbar {
   background-color: #11161d;
   color: #00ff6a;
   font-size: 0.95rem;
-  padding: 20px 0;
+  padding: 20px 10px;
 }
 
 .footer p {
   margin: 0;
   font-weight: 600;
   letter-spacing: 0.5px;
-  padding: 0 20px;
 }
 
 @media (max-width: 1024px) {
@@ -1321,18 +1320,6 @@ body.menu-open .navbar {
     writing-mode: horizontal-tb;
     transform: none;
     margin: 0;
-  }
-
-  /* === Botón verde igual a las redes === */
-  .connect-mail {
-    color: #000;
-    font-weight: 700;
-    background-color: #00ff6a;
-  }
-
-  .connect-mail:hover {
-    background-color: #00cc77;
-    transform: scale(1.02);
   }
 }
 
