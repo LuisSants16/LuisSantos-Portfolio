@@ -906,6 +906,7 @@ body.menu-open .navbar {
   margin: 0;
   font-weight: 600;
   letter-spacing: 0.5px;
+  padding: 0 20px;
 }
 
 @media (max-width: 1024px) {
