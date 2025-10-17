@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Intel One Mono";
+  font-family: monospace;
 }
 
 body {
@@ -875,8 +875,8 @@ body.menu-open .navbar {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background-color: #00ff6a;
-  color: #000;
+  background-color: #02b44c;
+  color: white;
   font-weight: 700;
   font-size: 1.3rem;
   text-decoration: none;
@@ -884,10 +884,14 @@ body.menu-open .navbar {
   transition: all 0.3s ease;
 }
 
+.connect-item:hover {
+  filter: brightness(0.8);
+  transform: none; /* elimina el escalado */
+}
+
 .connect-mail:hover {
-  background-color: #00cc77;
-  box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
-  transform: scale(1.03);
+  filter: brightness(0.8);
+  transform: none; /* elimina el escalado */
 }
 
 /* === FOOTER === */
@@ -1285,7 +1289,7 @@ body.menu-open .navbar {
     /* 🔸 Una sola columna */
   .connect-grid {
     grid-template-columns: 1fr;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   /* === Cada red + botón verde === */
