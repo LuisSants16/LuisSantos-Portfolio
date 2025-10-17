@@ -10,17 +10,12 @@ body {
   background: #020b16; /* Azul oscuro elegante */
   color: #e4f0fb;
   overflow-x: hidden;
+  
 }
 
 body,
 html {
-  cursor: url("https://www.rw-designer.com/cursor-extern.php?id=146250"), auto;
-}
-
-a,
-button {
-  cursor: url("https://www.rw-designer.com/cursor-extern.php?id=146251"),
-    pointer;
+  cursor: url("./img/cursos/1\ Normal.cur"), auto;
 }
 
 .no-scroll {
