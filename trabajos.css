@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .imagen-proyecto img {
@@ -25,6 +26,7 @@
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(0, 229, 255, 0.25);
   transition: opacity 0.5s ease, transform 0.5s ease;
+  filter: brightness(0.6);
 }
 
 /* --- Lado derecho (lista de proyectos) --- */
@@ -111,6 +113,35 @@
   transition: opacity 0.4s ease;
 }
 
+/* 🔹 Botón dentro de la imagen, en la parte inferior */
+#btn-ver-proyecto {
+  position: absolute;
+  bottom: 10%; /* 👈 ajusta este valor (más grande = más arriba, más pequeño = más abajo) */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0077ff;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 32px;
+  border-radius: 30px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.35);
+  backdrop-filter: blur(4px);
+  transition: all 0.4s ease;
+}
+
+#btn-ver-proyecto:hover {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.7);
+}
+
+.imagen-proyecto.cambiando #btn-ver-proyecto {
+  opacity: 0;
+  pointer-events: none;
+}
+    
 /* 🖥️ Pantallas medianas (hasta 1024px) */
 @media (max-width: 1024px) {
   .contenedor-trabajos {
@@ -194,6 +225,14 @@
     font-size: 13px;
     line-height: 1.5;
   }
+
+  #btn-ver-proyecto {
+    bottom: 25px;
+    font-size: 12px;
+    padding: 7px 20px;
+    border-radius: 26px;
+  }
+
 }
 
 @media (max-width: 480px) {
