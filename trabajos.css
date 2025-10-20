@@ -201,12 +201,6 @@
     grid-template-columns: 1fr;
     margin-top: 80px;
   }
-
-  .imagen-proyecto {
-    height: 170px;
-    padding: 6px;
-  }
-
   .imagen-proyecto img {
     width: 100%;
     height: 100%;
