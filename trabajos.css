@@ -1,0 +1,204 @@
+/* ===== MAIN ===== */
+.contenedor-trabajos {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  margin-top: 90px;
+}
+
+/* --- Lado izquierdo (imagen principal) --- */
+.imagen-proyecto {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000114;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagen-proyecto img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.25);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* --- Lado derecho (lista de proyectos) --- */
+.lista-proyectos {
+  background: #0b1220;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #00e5ff;
+  overflow-y: auto; /* Activa scroll solo en este bloque */
+}
+
+/* Personaliza el scroll (sutil y moderno) */
+.lista-proyectos::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lista-proyectos::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.4);
+  border-radius: 4px;
+}
+
+.lista-proyectos::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.7);
+}
+
+.lista-proyectos h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #00e5ff;
+}
+
+.lista-proyectos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-proyectos li {
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.lista-proyectos li .nombre {
+  display: block;
+  font-size: 22px;
+  color: #fff;
+}
+
+.lista-proyectos li .categoria {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 2px;
+}
+
+.lista-proyectos li:hover {
+  color: #00e5ff;
+  transform: translateX(8px);
+}
+
+.lista-proyectos li.activo {
+  color: #00e5ff;
+  text-shadow: 0 0 8px #00e5ff;
+}
+
+/* --- Descripción inferior --- */
+.descripcion {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.descripcion p {
+  font-size: 16px;
+  color: #bdefff;
+  line-height: 1.6;
+  transition: opacity 0.4s ease;
+}
+
+/* 📱 Móviles muy pequeños (hasta 480px) */
+@media (max-width: 480px) {
+  .contenedor-trabajos {
+    grid-template-columns: 1fr;
+    margin-top: 90px;
+  }
+
+  .imagen-proyecto {
+    height: 220px;
+    padding: 10px;
+  }
+
+  .imagen-proyecto img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .lista-proyectos {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .lista-proyectos h2 {
+    font-size: 20px;
+  }
+
+  .lista-proyectos li .nombre {
+    font-size: 16px;
+  }
+
+  .descripcion p {
+    font-size: 14px;
+  }
+}
+
+/* 💻 Tablets (hasta 768px) */
+@media (max-width: 768px) {
+  .contenedor-trabajos {
+    grid-template-columns: 1fr;
+    margin-top: 100px;
+  }
+
+  .imagen-proyecto {
+    height: 300px;
+  }
+
+  .lista-proyectos {
+    padding: 30px;
+    text-align: center;
+  }
+
+  .lista-proyectos h2 {
+    font-size: 24px;
+  }
+
+  .lista-proyectos li {
+    font-size: 17px;
+  }
+
+  .descripcion {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+/* 🖥️ Pantallas medianas (hasta 1024px) */
+@media (max-width: 1024px) {
+  .contenedor-trabajos {
+    grid-template-columns: 1fr;
+    margin-top: 120px;
+  }
+
+  .imagen-proyecto {
+    height: 400px;
+  }
+
+  .lista-proyectos {
+    max-height: calc(100vh - 150px); /* mantiene scroll dentro del viewport */
+    overflow-y: auto; /* scroll interno correcto */
+    padding-bottom: 40px;
+  }
+
+  .lista-proyectos h2 {
+    font-size: 26px;
+  }
+
+  .lista-proyectos li .nombre {
+    font-size: 20px;
+  }
+}
