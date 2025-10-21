@@ -123,56 +123,76 @@
       </ul>
     </nav>
 
-    <main class="contenedor-trabajos">
-      <!-- Imagen principal -->
-      <div class="imagen-proyecto">
-        <img id="preview" src="./img/proyecto1.jpg" alt="Proyecto actual" />
-        <a id="btn-ver-proyecto" href="#">Ver Proyecto</a>
-      </div>
+    <section class="seccion-proyectos">
+      <h2 class="titulo-seccion">{ PROYECTOS }</h2>
 
-      <!-- Lista de proyectos -->
-      <div class="lista-proyectos">
-        <h2>PROYECTOS</h2>
-        <ul>
-          <li
-            class="activo"
-            data-img="./img/proyecto1.jpg"
-            data-desc="Sitio web profesional para servicios de construcción y acabados."
-          >
-            <span class="nombre">Pagina Web MASCH</span>
-            <span class="categoria">Diseño Web / Frontend</span>
-          </li>
+      <!-- Proyecto 1 -->
+      <div class="bloque-proyecto">
+        <div class="imagen-proyecto">
+          <img src="./img/proyecto1.jpg" alt="Proyecto MASCH" />
+        </div>
+        <div class="texto-proyecto">
+          <h3 class="titulo-proyecto">PÁGINA WEB MASCH</h3>
 
-          <li
-            data-img="./img/proyecto2.jpg"
-            data-desc="Aplicación web para gestión y control diario de gastos con reportes y gráficos."
-          >
-            <span class="nombre">Control Gastos Diario</span>
-            <span class="categoria">Desarrollo Web / App Interactiva</span>
-          </li>
+          <p>
+            <span>Propósito:</span> Crear una presencia digital profesional para
+            mostrar los servicios de acabados y construcción del especialista
+            Miguel Ángel Santos Chinchón.
+          </p>
 
-          <li
-            data-img="./img/proyecto3.jpg"
-            data-desc="Diseño UX/UI para aplicación moderna."
-          >
-            <span class="nombre">Proyecto Tres</span>
-            <span class="categoria">UX / UI</span>
-          </li>
+          <p>
+            <span>Desarrollo:</span> Se diseñó y codificó un sitio web moderno
+            utilizando HTML, CSS y JavaScript, con secciones dinámicas,
+            animaciones suaves y diseño completamente responsive.
+          </p>
 
-          <li
-            data-img="./img/proyecto4.jpg"
-            data-desc="Desarrollo web completo con animaciones interactivas."
-          >
-            <span class="nombre">Proyecto Cuatro</span>
-            <span class="categoria">Web Dev</span>
-          </li>
-        </ul>
+          <p><span>Tecnologías:</span> HTML5, CSS3, JavaScript</p>
 
-        <div class="descripcion">
-          <p id="descripcion-texto">Diseño de identidad visual y web.</p>
+          <a href="#" class="btn-proyecto">Ver Proyecto →</a>
         </div>
       </div>
-    </main>
+
+      <!-- Proyecto 2 -->
+      <div class="bloque-proyecto invertido">
+        <div class="imagen-proyecto">
+          <img src="./img/proyecto2.jpg" alt="Control Gastos Diario" />
+        </div>
+        <div class="texto-proyecto">
+          <h3 class="titulo-proyecto">CONTROL DE GASTOS DIARIO</h3>
+          <p>
+            <span>Problema:</span> Las personas necesitaban una forma rápida y
+            sencilla de registrar y visualizar sus gastos diarios.
+          </p>
+          <p>
+            <span>Solución:</span> Se creó una aplicación web interactiva con
+            JavaScript, modo oscuro, exportación a JSON y PDF, y estadísticas en
+            tiempo real.
+          </p>
+          <a href="#" class="btn-proyecto">Ver Proyecto →</a>
+        </div>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div class="bloque-proyecto">
+        <div class="imagen-proyecto">
+          <img src="./img/proyecto3.jpg" alt="FotoRiversS" />
+        </div>
+        <div class="texto-proyecto">
+          <h3 class="titulo-proyecto">FOTORIVERSS</h3>
+          <p>
+            <span>Problema:</span> Crear una red social simple donde los
+            usuarios puedan subir fotos, dar likes y comentar sin necesidad de
+            registrarse.
+          </p>
+          <p>
+            <span>Solución:</span> Se implementó un muro social en JavaScript y
+            LocalStorage con interfaz inspirada en IMVU, popup de fotos y diseño
+            oscuro moderno.
+          </p>
+          <a href="#" class="btn-proyecto">Ver Proyecto →</a>
+        </div>
+      </div>
+    </section>
 
     <section class="connect">
       <h2 class="connect-title">Conectate Conmigo</h2>

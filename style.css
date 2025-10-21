@@ -307,7 +307,7 @@ body.menu-open .navbar {
   text-align: center;
 
   /* 🌈 Fondo animado */
-  background: linear-gradient(120deg, #000114, #001122, #002a22);
+  background: linear-gradient(120deg, #0b1220, #0c162788, #0d1930);
   background-size: 200% 200%;
   animation: moverDegradado 4s infinite alternate ease-in-out;
 }
@@ -733,18 +733,6 @@ body.menu-open .navbar {
   z-index: 0;
 }
 
-/* Fondo degradado animado encima del VANTA */
-.frase-destacada::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, #000114, #001122, #002a22);
-  background-size: 200% 200%;
-  animation: moverDegradado 4s infinite alternate ease-in-out;
-  opacity: 0.5; /* 💡 deja ver VANTA debajo */
-  z-index: 1;
-}
-
 /* Contenido */
 .frase-contenedor {
   position: relative;
@@ -796,7 +784,7 @@ body.menu-open .navbar {
 }
 /* === CONNECT SECTION === */
 .connect {
-  background-color: #000a1b;
+  background-color: #0b1220;
   text-align: center;
   font-family: "Poppins", sans-serif;
   color: #fff;
@@ -891,7 +879,7 @@ body.menu-open .navbar {
 
 /* === FOOTER === */
 .footer {
-  background-color: #11161d;
+  background-color: #0b1220;
   color: #00ff6a;
   font-size: 0.95rem;
   padding: 20px 10px;

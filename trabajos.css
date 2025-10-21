@@ -1,284 +1,269 @@
-/* ===== MAIN ===== */
-.contenedor-trabajos {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  height: calc(100vh - 100px);
+.seccion-proyectos {
+  background: #030b17;
+  color: #fff;
+  padding: 120px 8%;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  position: relative;
   overflow: hidden;
-  margin-top: 90px;
+  background: radial-gradient(circle at 30% 50%, #041121, #020a15 70%);
 }
 
-/* --- Lado izquierdo (imagen principal) --- */
-.imagen-proyecto {
+/* 🔹 Capa de animación */
+.seccion-proyectos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, #0e1a31, transparent 60%),
+    radial-gradient(circle at 80% 70%, #0e1a31, transparent 60%);
+  background-size: 200% 200%;
+  animation: moverLuces 6s ease-in-out infinite alternate;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+/* 🔹 Movimiento suave del brillo */
+@keyframes moverLuces {
+  0% {
+    background-position: 0% 0%, 100% 100%;
+  }
+  50% {
+    background-position: 50% 80%, 30% 20%;
+  }
+  100% {
+    background-position: 100% 100%, 0% 0%;
+  }
+}
+
+/* 🔹 Asegura que el contenido esté encima */
+.seccion-proyectos > * {
   position: relative;
-  width: 100%;
-  height: 100%;
-  background: #000a1b;
+  z-index: 1;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 42px;
+  color: #00d8ff;
+  text-shadow: 0 0 15px #00d8ff;
+  margin-bottom: 100px;
+  letter-spacing: 2px;
+}
+
+.bloque-proyecto {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 220px;
+  gap: 120px;
+  transform: scale(1.05);
+}
+
+.bloque-proyecto.invertido {
+  flex-direction: row-reverse;
+}
+
+.imagen-proyecto {
+  flex: 1;
+  display: flex;
   justify-content: center;
-  
+  perspective: 1000px;
 }
 
 .imagen-proyecto img {
-  width: 90%;
-  height: 90%;
-  object-fit: cover;
+  width: 95%;
+  max-width: 650px;
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 229, 255, 0.25);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  filter: brightness(0.6);
+  transform: rotateY(20deg) rotateX(4deg);
+  box-shadow: 0 0 50px rgba(0, 216, 255, 0.3);
+  transition: all 0.6s ease;
 }
 
-/* --- Lado derecho (lista de proyectos) --- */
-.lista-proyectos {
-  background: #0b1220;
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  color: #00e5ff;
-  overflow-y: auto; /* Activa scroll solo en este bloque */
+.bloque-proyecto.invertido .imagen-proyecto img {
+  transform: rotateY(-20deg) rotateX(4deg);
 }
 
-/* Personaliza el scroll (sutil y moderno) */
-.lista-proyectos::-webkit-scrollbar {
-  width: 6px;
+.imagen-proyecto img:hover {
+  transform: rotateY(-15deg) scale(1.1);
+  box-shadow: 0 0 60px rgba(0, 216, 255, 0.7);
 }
 
-.lista-proyectos::-webkit-scrollbar-thumb {
-  background: rgba(0, 229, 255, 0.4);
-  border-radius: 4px;
+.bloque-proyecto.invertido .imagen-proyecto img:hover {
+  transform: rotateY(15deg) scale(1.1);
+  box-shadow: 0 0 60px rgba(0, 216, 255, 0.7);
 }
 
-.lista-proyectos::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 229, 255, 0.7);
+.texto-proyecto {
+  flex: 1;
+  max-width: 600px;
 }
 
-.lista-proyectos h2 {
+.texto-proyecto span {
+  color: #00d8ff;
+  font-weight: 700;
+}
+
+.titulo-proyecto {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 30px;
-  letter-spacing: 3px;
-  text-shadow: 0 0 10px #00e5ff;
-}
-
-.lista-proyectos ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.lista-proyectos li {
+  color: #00d8ff;
+  border: 2px solid #00d8ff;
+  display: inline-block;
+  padding: 10px 25px;
   margin-bottom: 25px;
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.3s ease;
-  font-size: 18px;
+  text-shadow: 0 0 10px #00d8ff;
+}
+
+.texto-proyecto p {
+  line-height: 1.9;
+  font-size: 14px; /* 🔹 más grande */
+  margin-bottom: 16px;
+  color: #e3f5ff;
+}
+
+.texto-proyecto span {
+  color: #00d8ff;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.65);
 }
 
-.lista-proyectos li .nombre {
-  display: block;
-  font-size: 22px;
-  color: #fff;
-}
-
-.lista-proyectos li .categoria {
-  font-size: 14px;
-  opacity: 0.6;
-  margin-top: 2px;
-}
-
-.lista-proyectos li:hover {
-  color: #00e5ff;
-  transform: translateX(8px);
-}
-
-.lista-proyectos li.activo {
-  color: #00e5ff;
-  text-shadow: 0 0 8px #00e5ff;
-}
-
-/* --- Descripción inferior --- */
-.descripcion {
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(0, 229, 255, 0.2);
-}
-
-.descripcion p {
-  font-size: 16px;
-  color: #bdefff;
-  line-height: 1.6;
-  transition: opacity 0.4s ease;
-}
-
-/* 🔹 Botón dentro de la imagen, en la parte inferior */
-#btn-ver-proyecto {
-  position: absolute;
-  bottom: 10%; /* 👈 ajusta este valor (más grande = más arriba, más pequeño = más abajo) */
-  left: 50%;
-  transform: translateX(-50%);
-  background: #0077ff;
-  color: #ffffff;
+.btn-proyecto {
+  display: inline-block;
+  background: #00d8ff;
+  color: #0b1220;
   font-weight: 700;
   text-decoration: none;
-  padding: 10px 32px;
-  border-radius: 30px;
-  letter-spacing: 0.5px;
+  padding: 12px 36px;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  font-size: 16px;
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.35);
-  backdrop-filter: blur(4px);
-  transition: all 0.4s ease;
+  box-shadow: 0 0 25px rgba(0, 216, 255, 0.4);
 }
 
-#btn-ver-proyecto:hover {
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.7);
+.btn-proyecto:hover {
+  background: #00ffff;
+  box-shadow: 0 0 40px rgba(0, 216, 255, 0.8);
 }
 
-.imagen-proyecto.cambiando #btn-ver-proyecto {
-  opacity: 0;
-  pointer-events: none;
-}
-    
-/* 🖥️ Pantallas medianas (hasta 1024px) */
+/* 🔷 Tablet horizontal (hasta 1024px) */
 @media (max-width: 1024px) {
-  .contenedor-trabajos {
-    grid-template-columns: 1fr;
-    margin-top: 100px;
-    padding: 10px;
+  .seccion-proyectos {
+    padding: 100px 6%;
+    gap: 60px;
   }
 
-  .imagen-proyecto {
-    height: 400px;
+  .bloque-proyecto {
+    gap: 70px;
+    transform: scale(1.02);
   }
 
   .imagen-proyecto img {
-    border-radius: 12px;
+    max-width: 500px;
   }
 
-  .lista-proyectos {
-    max-height: calc(100vh - 150px); /* mantiene scroll dentro del viewport */
-    overflow-y: auto; /* scroll interno correcto */
-    padding: 40px 25px 60px;
+  .texto-proyecto {
+    max-width: 450px;
   }
 
-  .lista-proyectos h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
+  .titulo-proyecto {
+    font-size: 24px;
   }
 
-  .lista-proyectos li .nombre {
-    font-size: 17px;
-  }
-
-  .lista-proyectos li .categoria {
+  .texto-proyecto p {
     font-size: 13px;
   }
+}
 
-  .descripcion p {
+/* 🔷 Tablet vertical / pantallas medianas (hasta 768px) */
+@media (max-width: 768px) {
+  .seccion-proyectos{
+    gap: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .titulo-seccion{
+    padding-top: 40px;
+  }
+  
+  .bloque-proyecto {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    margin-bottom: 140px;
+  }
+
+  .bloque-proyecto.invertido {
+    flex-direction: column;
+  }
+
+  .imagen-proyecto img {
+    max-width: 85%;
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+
+  .bloque-proyecto.invertido .imagen-proyecto img {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+
+  .imagen-proyecto img:hover {
+    transform: scale(1.05);
+  }
+
+  .bloque-proyecto.invertido .imagen-proyecto img:hover {
+    transform: scale(1.05);
+  }
+
+  .texto-proyecto {
+    max-width: 90%;
+  }
+
+  .titulo-proyecto {
+    font-size: 22px;
+  }
+
+  .texto-proyecto p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .btn-proyecto {
+    padding: 10px 28px;
     font-size: 14px;
   }
 }
 
-@media (max-width: 768px) {
-  .contenedor-trabajos {
-    grid-template-columns: 1fr;
-    margin-top: 90px;
-  }
-
-  .imagen-proyecto {
-    height: 230px;
-    padding: 10px;
-  }
-
-  .imagen-proyecto img {
-    border-radius: 10px;
-    box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
-  }
-
-  .lista-proyectos {
-    padding: 25px 20px 40px;
-    text-align: center;
-  }
-
-  .lista-proyectos h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-
-  .lista-proyectos li .nombre {
-    font-size: 15px;
-  }
-
-  .lista-proyectos li .categoria {
-    font-size: 12px;
-  }
-
-  .descripcion {
-    margin-top: 25px;
-    text-align: center;
-  }
-
-  .descripcion p {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  #btn-ver-proyecto {
-    bottom: 25px;
-    font-size: 12px;
-    padding: 7px 20px;
-    border-radius: 26px;
-  }
-
-}
-
+/* 🔷 Celulares pequeños (hasta 480px) */
 @media (max-width: 480px) {
-  .contenedor-trabajos {
-    grid-template-columns: 1fr;
-    margin-top: 80px;
+  .seccion-proyectos {
+    padding: 80px 5%;
   }
+
+  .titulo-seccion {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+
+  .bloque-proyecto {
+    margin-bottom: 120px;
+  }
+
   .imagen-proyecto img {
     width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.15);
+    max-width: 350px;
   }
 
-  .lista-proyectos {
-    padding: 15px 12px 30px;
-    text-align: center;
+  .titulo-proyecto {
+    font-size: 20px;
+    padding: 8px 18px;
   }
 
-  .lista-proyectos h2 {
-    font-size: 18px;
-    margin-bottom: 12px;
-    text-shadow: 0 0 6px rgba(0, 229, 255, 0.5);
+  .texto-proyecto p {
+    font-size: 12px;
   }
 
-  .lista-proyectos li {
-    margin-bottom: 18px;
-  }
-
-  .lista-proyectos li .nombre {
-    font-size: 14px;
-    line-height: 1.3;
-  }
-
-  .lista-proyectos li .categoria {
-    font-size: 11px;
-    opacity: 0.7;
-  }
-
-  .descripcion {
-    margin-top: 20px;
-  }
-
-  .descripcion p {
+  .btn-proyecto {
     font-size: 13px;
-    line-height: 1.4;
-    color: #bdefff;
+    padding: 9px 22px;
   }
 }
