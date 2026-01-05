@@ -1,47 +1,63 @@
-📌 Proyecto Web Interactivo
+# 🌐 LuisSantos – Portafolio Web
 
-Este proyecto es una aplicación web desarrollada con HTML, CSS y JavaScript, enfocada en la práctica y mejora del diseño visual, la interacción con el usuario y la organización del código en el frontend
+🔗 [Ver sitio web](https://luissants16.github.io/LuisSantos-Portfolio/)
 
-El objetivo principal es crear una experiencia visual agradable, funcional y fácil de entender, aplicando buenas prácticas de maquetación y estilos modernos
+---
 
-🚀 Características
+## 📝 Descripción
 
-Diseño moderno y limpio
+Este proyecto es mi **portafolio web personal**, desarrollado con **HTML, CSS y JavaScript**.
 
-Estructura organizada de archivos
+El sitio presenta mis proyectos, prácticas y avances en desarrollo web, con un diseño limpio y una estructura clara, enfocado en seguir mejorando mis habilidades en frontend.
 
-Interacción dinámica con JavaScript
+El objetivo es mostrar mi progreso, organización de código y estilo visual, además de servir como base para futuros proyectos más avanzados.
 
-Uso de imágenes y contenido visual
+---
 
-Código claro y fácil de modificar
+## 🛠️ Tecnologías utilizadas
 
-Proyecto ideal para aprendizaje y portafolio
+- **HTML5** → estructura del contenido  
+- **CSS3** → estilos, diseño visual y maquetación  
+- **JavaScript** → interacciones y lógica básica  
+- **Diseño responsive** → adaptable a distintos dispositivos  
 
-🛠️ Tecnologías utilizadas
+---
 
-HTML5 para la estructura
+## ✨ Secciones del portafolio
 
-CSS3 para estilos y diseño visual
+- Página principal con presentación  
+- Sección de proyectos  
+- Galería de trabajos  
+- Estructura modular de archivos  
+- Diseño claro y fácil de navegar  
 
-JavaScript para la lógica e interactividad
+---
 
-▶️ Cómo usar el proyecto
+## 📂 Estructura del proyecto
 
-Clona el repositorio
+📁 LuisSantos-Portfolio/
+│── index.html
+│── script.js
+│── style.css
+│── trabajos.html
+│── trabajos.css
+│── trabajos.js
+│── img/
+│── Proyectos/
+│ ├── HTML/
+│ ├── CSS/
+│ └── JS/
 
-git clone https://github.com/tu-usuario/nombre-del-repositorio.git
 
+---
 
-Abre el archivo index.html en tu navegador
+## 👤 Autor
 
-Disfruta y modifica el proyecto según tus necesidades
+Desarrollado por **Luis Miguel Santos Rivera**  
+Portafolio personal de aprendizaje y práctica en desarrollo web
 
-✨ Autor
+---
 
-Desarrollado por Luis Miguel Santos Rivera
-Proyecto realizado con fines educativos y de aprendizaje continuo
+## 📄 Licencia
 
-📄 Licencia
-
-Este proyecto es de uso libre para fines educativos y personales
+Proyecto de uso libre para fines educativos y personales
